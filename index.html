@@ -54,7 +54,7 @@
         .stat-item h3 { font-size: 2rem; color: var(--primary); }
         .stat-item p { color: #666; font-size: 0.9rem; font-weight: 600; }
 
-        /* Student Carousel Section (Học Sinh Tiêu Biểu Auto-scroll) */
+        /* Student Carousel Section (Học Sinh Tiêu Biểu Việt Nam) */
         .students-section { background: white; padding: 50px 0; margin: 40px 0; }
         .section-header { text-align: center; margin-bottom: 35px; }
         .section-header h2 { font-size: 2rem; color: var(--primary); text-transform: uppercase; position: relative; padding-bottom: 10px; display: inline-block; }
@@ -77,17 +77,18 @@
 
         /* Classes Grid */
         .grid-classes { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; margin-bottom: 40px; }
-        .class-card { background: white; border-radius: 8px; border: 1px solid #e1e4e8; overflow: hidden; transition: 0.3s; }
+        .class-card { background: white; border-radius: 8px; border: 1px solid #e1e4e8; overflow: hidden; transition: 0.3s; display: flex; flex-direction: column; justify-content: space-between; }
         .class-card:hover { box-shadow: 0 8px 20px rgba(0,0,0,0.12); }
         .card-head { background: #eef5ff; padding: 12px 15px; border-bottom: 1px solid #ddd; display: flex; justify-content: space-between; align-items: center; }
         .code { font-weight: bold; color: var(--primary); font-size: 1.1rem; }
         .badge { background: #d4edda; color: #155724; padding: 3px 10px; border-radius: 12px; font-size: 0.8rem; font-weight: bold; }
         .card-body { padding: 15px; font-size: 0.95rem; }
         .info-row { display: flex; margin-bottom: 8px; }
-        .info-label { width: 100px; font-weight: bold; color: #555; }
+        .info-label { width: 100px; font-weight: bold; color: #555; flex-shrink: 0; }
         .price { color: var(--danger); font-weight: bold; font-size: 1.1rem; }
         .card-foot { padding: 12px 15px; background: #fafafa; border-top: 1px solid #eee; text-align: center; }
-        .btn-apply { display: block; width: 100%; background: var(--accent); color: white; padding: 9px; border-radius: 5px; text-decoration: none; font-weight: bold; }
+        .btn-apply { display: block; width: 100%; background: var(--accent); color: white; padding: 9px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: 0.2s; }
+        .btn-apply:hover { background: #218838; }
 
         /* Inline Form Section */
         .inline-consult-section { background: #fff5f5; padding: 40px 0; border-top: 2px dashed #ffc107; border-bottom: 2px dashed #ffc107; margin: 40px 0; }
@@ -167,7 +168,7 @@
         </div>
     </header>
 
-    <!-- Hero Banner (Hình tươi sáng, rực rỡ) -->
+    <!-- Hero Banner -->
     <section class="hero">
         <div class="container">
             <h1>TRUNG TÂM GIA SƯ BÁCH KHOA 247</h1>
@@ -201,7 +202,7 @@
         </div>
     </section>
 
-    <!-- Section: Học Sinh Tiêu Biểu (Chạy Tự Động 10 Học Sinh) -->
+    <!-- Section: Học Sinh Tiêu Biểu (10 Học Sinh Việt Nam Chạy Tự Động) -->
     <section class="students-section" id="hoc-sinh-tieu-bieu">
         <div class="container">
             <div class="section-header">
@@ -212,9 +213,9 @@
 
         <div class="slider-container">
             <div class="slider-track">
-                <!-- 10 Học Sinh -->
+                <!-- 10 Học Sinh Châu Á / Việt Nam -->
                 <div class="student-card">
-                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=300" alt="Học sinh"></div>
+                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=300" alt="Học sinh"></div>
                     <div class="student-name">Phạm Minh Hằng</div>
                     <div class="student-achievement">Giải Nhất cuộc thi Viết Chữ Đẹp</div>
                 </div>
@@ -224,49 +225,49 @@
                     <div class="student-achievement">Giải Nhì HSG Toán Cấp Quốc Gia</div>
                 </div>
                 <div class="student-card">
-                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=300" alt="Học sinh"></div>
+                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=300" alt="Học sinh"></div>
                     <div class="student-name">Trần Hà Linh</div>
                     <div class="student-achievement">HSG Môn Tiếng Anh 3 Năm Liền</div>
                 </div>
                 <div class="student-card">
-                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300" alt="Học sinh"></div>
+                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=300" alt="Học sinh"></div>
                     <div class="student-name">Nguyễn Hoàng Nam</div>
                     <div class="student-achievement">Thủ Khoa ĐH Bách Khoa (29.5đ)</div>
                 </div>
                 <div class="student-card">
-                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300" alt="Học sinh"></div>
+                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300" alt="Học sinh"></div>
                     <div class="student-name">Lê Thảo My</div>
                     <div class="student-achievement">Giải Nhất HSG Lý Cấp Thành Phố</div>
                 </div>
                 <div class="student-card">
-                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300" alt="Học sinh"></div>
+                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300" alt="Học sinh"></div>
                     <div class="student-name">Vũ Quốc Anh</div>
                     <div class="student-achievement">Huy Chương Vàng Olympic Toán</div>
                 </div>
                 <div class="student-card">
-                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300" alt="Học sinh"></div>
+                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=300" alt="Học sinh"></div>
                     <div class="student-name">Đặng Bảo Ngọc</div>
                     <div class="student-achievement">IELTS 8.0 Ngay Từ Lớp 11</div>
                 </div>
                 <div class="student-card">
-                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300" alt="Học sinh"></div>
+                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300" alt="Học sinh"></div>
                     <div class="student-name">Ngô Đức Mạnh</div>
                     <div class="student-achievement">Giải Nhất Tin Học Trẻ Toàn Quốc</div>
                 </div>
                 <div class="student-card">
-                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300" alt="Học sinh"></div>
+                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=300" alt="Học sinh"></div>
                     <div class="student-name">Phan Khánh Vân</div>
                     <div class="student-achievement">Giải Nhất HSG Hóa Cấp Tỉnh</div>
                 </div>
                 <div class="student-card">
-                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=300" alt="Học sinh"></div>
+                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=300" alt="Học sinh"></div>
                     <div class="student-name">Hoàng Anh Tuấn</div>
                     <div class="student-achievement">Đậu Chuyên KHTN Môn Toán</div>
                 </div>
 
-                <!-- Duplicate 10 Học Sinh để hiệu ứng cuộn lặp vô tận seamless -->
+                <!-- Lặp lại 10 Học Sinh để tạo hiệu ứng cuộn mượt không ngắt quãng -->
                 <div class="student-card">
-                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=300" alt="Học sinh"></div>
+                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=300" alt="Học sinh"></div>
                     <div class="student-name">Phạm Minh Hằng</div>
                     <div class="student-achievement">Giải Nhất cuộc thi Viết Chữ Đẹp</div>
                 </div>
@@ -276,42 +277,42 @@
                     <div class="student-achievement">Giải Nhì HSG Toán Cấp Quốc Gia</div>
                 </div>
                 <div class="student-card">
-                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=300" alt="Học sinh"></div>
+                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=300" alt="Học sinh"></div>
                     <div class="student-name">Trần Hà Linh</div>
                     <div class="student-achievement">HSG Môn Tiếng Anh 3 Năm Liền</div>
                 </div>
                 <div class="student-card">
-                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300" alt="Học sinh"></div>
+                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=300" alt="Học sinh"></div>
                     <div class="student-name">Nguyễn Hoàng Nam</div>
                     <div class="student-achievement">Thủ Khoa ĐH Bách Khoa (29.5đ)</div>
                 </div>
                 <div class="student-card">
-                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300" alt="Học sinh"></div>
+                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300" alt="Học sinh"></div>
                     <div class="student-name">Lê Thảo My</div>
                     <div class="student-achievement">Giải Nhất HSG Lý Cấp Thành Phố</div>
                 </div>
                 <div class="student-card">
-                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300" alt="Học sinh"></div>
+                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300" alt="Học sinh"></div>
                     <div class="student-name">Vũ Quốc Anh</div>
                     <div class="student-achievement">Huy Chương Vàng Olympic Toán</div>
                 </div>
                 <div class="student-card">
-                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300" alt="Học sinh"></div>
+                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=300" alt="Học sinh"></div>
                     <div class="student-name">Đặng Bảo Ngọc</div>
                     <div class="student-achievement">IELTS 8.0 Ngay Từ Lớp 11</div>
                 </div>
                 <div class="student-card">
-                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300" alt="Học sinh"></div>
+                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300" alt="Học sinh"></div>
                     <div class="student-name">Ngô Đức Mạnh</div>
                     <div class="student-achievement">Giải Nhất Tin Học Trẻ Toàn Quốc</div>
                 </div>
                 <div class="student-card">
-                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300" alt="Học sinh"></div>
+                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=300" alt="Học sinh"></div>
                     <div class="student-name">Phan Khánh Vân</div>
                     <div class="student-achievement">Giải Nhất HSG Hóa Cấp Tỉnh</div>
                 </div>
                 <div class="student-card">
-                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=300" alt="Học sinh"></div>
+                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=300" alt="Học sinh"></div>
                     <div class="student-name">Hoàng Anh Tuấn</div>
                     <div class="student-achievement">Đậu Chuyên KHTN Môn Toán</div>
                 </div>
@@ -319,7 +320,7 @@
         </div>
     </section>
 
-    <!-- Main Classes Content -->
+    <!-- Main Classes Content (Mở Rộng Danh Sách Lớp Cần Gia Sư) -->
     <div class="container" id="danh-sach-lop">
         <div class="section-header">
             <h2>DANH SÁCH LỚP MỚI CẦN GIA SƯ</h2>
@@ -375,6 +376,96 @@
                     <div class="info-row"><span class="info-label">Học phí:</span><span class="price">2.200.000 đ / tháng</span></div>
                     <div class="info-row"><span class="info-label">Lịch học:</span><span>2 buổi/tuần</span></div>
                     <div class="info-row"><span class="info-label">Yêu cầu:</span><span>Gia sư Nam/Nữ nhiệt tình, chuẩn kiến thức</span></div>
+                </div>
+                <div class="card-foot">
+                    <a href="https://zalo.me/0393676655" class="btn-apply" target="_blank"><i class="fa-brands fa-zalo"></i> Đăng Ký Nhận Lớp (Zalo)</a>
+                </div>
+            </div>
+
+            <!-- Lớp 4 -->
+            <div class="class-card">
+                <div class="card-head">
+                    <span class="code">Mã Lớp: BK-204</span>
+                    <span class="badge">Chưa giao</span>
+                </div>
+                <div class="card-body">
+                    <div class="info-row"><span class="info-label">Môn học:</span><span>Tiếng Anh Luyện Thi Vào 10</span></div>
+                    <div class="info-row"><span class="info-label">Địa điểm:</span><span>Quận Đống Đa</span></div>
+                    <div class="info-row"><span class="info-label">Học phí:</span><span class="price">2.400.000 đ / tháng</span></div>
+                    <div class="info-row"><span class="info-label">Lịch học:</span><span>3 buổi/tuần</span></div>
+                    <div class="info-row"><span class="info-label">Yêu cầu:</span><span>Gia sư Nữ Sư Phạm Ngoại Ngữ/IELTS 7.0+</span></div>
+                </div>
+                <div class="card-foot">
+                    <a href="https://zalo.me/0393676655" class="btn-apply" target="_blank"><i class="fa-brands fa-zalo"></i> Đăng Ký Nhận Lớp (Zalo)</a>
+                </div>
+            </div>
+
+            <!-- Lớp 5 -->
+            <div class="class-card">
+                <div class="card-head">
+                    <span class="code">Mã Lớp: BK-205</span>
+                    <span class="badge">Chưa giao</span>
+                </div>
+                <div class="card-body">
+                    <div class="info-row"><span class="info-label">Môn học:</span><span>Toán & Tiếng Việt Lớp 5</span></div>
+                    <div class="info-row"><span class="info-label">Địa điểm:</span><span>Quận Thanh Xuân</span></div>
+                    <div class="info-row"><span class="info-label">Học phí:</span><span class="price">1.800.000 đ / tháng</span></div>
+                    <div class="info-row"><span class="info-label">Lịch học:</span><span>2 buổi/tuần</span></div>
+                    <div class="info-row"><span class="info-label">Yêu cầu:</span><span>Gia sư Nữ kiên nhẫn, có nghiệp vụ tiểu học</span></div>
+                </div>
+                <div class="card-foot">
+                    <a href="https://zalo.me/0393676655" class="btn-apply" target="_blank"><i class="fa-brands fa-zalo"></i> Đăng Ký Nhận Lớp (Zalo)</a>
+                </div>
+            </div>
+
+            <!-- Lớp 6 -->
+            <div class="class-card">
+                <div class="card-head">
+                    <span class="code">Mã Lớp: BK-206</span>
+                    <span class="badge">Chưa giao</span>
+                </div>
+                <div class="card-body">
+                    <div class="info-row"><span class="info-label">Môn học:</span><span>Lập Trình C++ & Tin Học Trẻ</span></div>
+                    <div class="info-row"><span class="info-label">Địa điểm:</span><span>Học Online</span></div>
+                    <div class="info-row"><span class="info-label">Học phí:</span><span class="price">3.200.000 đ / tháng</span></div>
+                    <div class="info-row"><span class="info-label">Lịch học:</span><span>2 buổi/tuần</span></div>
+                    <div class="info-row"><span class="info-label">Yêu cầu:</span><span>Sinh viên Khoa CNTT Bách Khoa</span></div>
+                </div>
+                <div class="card-foot">
+                    <a href="https://zalo.me/0393676655" class="btn-apply" target="_blank"><i class="fa-brands fa-zalo"></i> Đăng Ký Nhận Lớp (Zalo)</a>
+                </div>
+            </div>
+
+            <!-- Lớp 7 -->
+            <div class="class-card">
+                <div class="card-head">
+                    <span class="code">Mã Lớp: BK-207</span>
+                    <span class="badge">Chưa giao</span>
+                </div>
+                <div class="card-body">
+                    <div class="info-row"><span class="info-label">Môn học:</span><span>Vật Lý Lớp 11 (Cơ Nâng Cao)</span></div>
+                    <div class="info-row"><span class="info-label">Địa điểm:</span><span>Quận Ba Đình</span></div>
+                    <div class="info-row"><span class="info-label">Học phí:</span><span class="price">2.000.000 đ / tháng</span></div>
+                    <div class="info-row"><span class="info-label">Lịch học:</span><span>2 buổi/tuần</span></div>
+                    <div class="info-row"><span class="info-label">Yêu cầu:</span><span>Sinh viên Bách Khoa học lực Khá/Giỏi</span></div>
+                </div>
+                <div class="card-foot">
+                    <a href="https://zalo.me/0393676655" class="btn-apply" target="_blank"><i class="fa-brands fa-zalo"></i> Đăng Ký Nhận Lớp (Zalo)</a>
+                </div>
+            </div>
+
+            <!-- Lớp 8 -->
+            <div class="class-card">
+                <div class="card-head">
+                    <span class="code">Mã Lớp: BK-208</span>
+                    <span class="badge">Chưa giao</span>
+                </div>
+                <div class="card-body">
+                    <div class="info-row"><span class="info-label">Môn học:</span><span>Toán Nâng Cao Lớp 8</span></div>
+                    <div class="info-row"><span class="info-label">Địa điểm:</span><span>Quận Hà Đông</span></div>
+                    <div class="info-row"><span class="info-label">Học phí:</span><span class="price">2.000.000 đ / tháng</span></div>
+                    <div class="info-row"><span class="info-label">Lịch học:</span><span>2 buổi/tuần</span></div>
+                    <div class="info-row"><span class="info-label">Yêu cầu:</span><span>Gia sư nhiệt tình, lấy lại gốc và nâng cao</span></div>
                 </div>
                 <div class="card-foot">
                     <a href="https://zalo.me/0393676655" class="btn-apply" target="_blank"><i class="fa-brands fa-zalo"></i> Đăng Ký Nhận Lớp (Zalo)</a>
