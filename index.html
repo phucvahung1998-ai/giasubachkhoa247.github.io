@@ -10,12 +10,10 @@
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; }
         body { background-color: #f4f6f9; color: var(--dark); line-height: 1.6; }
 
-        /* Top Bar */
+        /* Top Bar & Header */
         .top-bar { background: #0a3578; color: white; font-size: 0.85rem; padding: 6px 0; }
         .top-bar .container { display: flex; justify-content: space-between; align-items: center; }
-
-        /* Header & Nav */
-        header { background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); sticky: top; position: sticky; top: 0; z-index: 1000; }
+        header { background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 999; }
         .header-container { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; }
         .logo { font-size: 1.6rem; font-weight: bold; color: var(--primary); text-decoration: none; display: flex; align-items: center; gap: 10px; }
         .nav-menu { display: flex; list-style: none; gap: 20px; font-weight: 600; }
@@ -40,12 +38,11 @@
         .stat-item h3 { font-size: 2rem; color: var(--primary); }
         .stat-item p { color: #666; font-size: 0.9rem; font-weight: 600; }
 
-        /* Section Title */
+        /* Classes Grid */
         .section-header { text-align: center; margin-bottom: 35px; }
         .section-header h2 { font-size: 1.8rem; color: var(--primary); text-transform: uppercase; position: relative; padding-bottom: 10px; }
         .section-header h2::after { content: ''; width: 60px; height: 3px; background: var(--danger); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
 
-        /* Classes Grid */
         .grid-classes { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; margin-bottom: 40px; }
         .class-card { background: white; border-radius: 8px; border: 1px solid #e1e4e8; overflow: hidden; transition: 0.3s; }
         .class-card:hover { box-shadow: 0 8px 20px rgba(0,0,0,0.12); }
@@ -59,12 +56,38 @@
         .card-foot { padding: 12px 15px; background: #fafafa; border-top: 1px solid #eee; text-align: center; }
         .btn-apply { display: block; width: 100%; background: var(--accent); color: white; padding: 9px; border-radius: 5px; text-decoration: none; font-weight: bold; }
 
-        /* Features / Why Choose Us */
-        .why-us { background: white; padding: 50px 0; margin-bottom: 40px; }
-        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
-        .feature-item { text-align: center; padding: 20px; }
-        .feature-item i { font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; }
-        .feature-item h3 { font-size: 1.2rem; margin-bottom: 10px; }
+        /* Inline Form Section (Ảnh 3) */
+        .inline-consult-section { background: #fff5f5; padding: 40px 0; border-top: 2px dashed #ffc107; border-bottom: 2px dashed #ffc107; margin: 40px 0; }
+        .consult-wrapper { display: flex; align-items: center; justify-content: space-between; gap: 30px; flex-wrap: wrap; }
+        .consult-image { flex: 1; min-width: 280px; text-align: center; }
+        .consult-image img { max-width: 100%; height: auto; max-height: 250px; }
+        .consult-form-box { flex: 1.2; min-width: 300px; }
+        .consult-form-box h2 { font-size: 1.8rem; color: #d32f2f; margin-bottom: 20px; text-align: center; }
+        .consult-form-box h2 span { color: #e91e63; }
+        .form-group { margin-bottom: 15px; }
+        .form-group input, .form-group textarea { width: 100%; padding: 12px 15px; border: 1px solid #ccc; border-radius: 5px; font-size: 0.95rem; outline: none; }
+        .form-group textarea { height: 90px; resize: none; }
+        .btn-submit-inline { background: #ff9800; color: white; border: none; padding: 12px 30px; font-weight: bold; font-size: 1rem; border-radius: 5px; cursor: pointer; display: block; margin: 0 auto; transition: 0.3s; }
+        .btn-submit-inline:hover { background: #e68a00; }
+
+        /* Floating Flashing Red Button (Ảnh 2) */
+        .floating-consult-btn { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 1000; background: #ff2a4b; color: white; padding: 12px 30px; border-radius: 30px; font-weight: bold; font-size: 1.05rem; box-shadow: 0 4px 15px rgba(255, 42, 75, 0.5); cursor: pointer; border: 2px solid white; animation: pulse-red 1.5s infinite; text-align: center; text-decoration: none; }
+        @keyframes pulse-red {
+            0% { transform: translateX(-50%) scale(1); box-shadow: 0 0 0 0 rgba(255, 42, 75, 0.7); }
+            70% { transform: translateX(-50%) scale(1.06); box-shadow: 0 0 0 15px rgba(255, 42, 75, 0); }
+            100% { transform: translateX(-50%) scale(1); box-shadow: 0 0 0 0 rgba(255, 42, 75, 0); }
+        }
+
+        /* Modal Popup (Ảnh 1) */
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 2000; display: none; justify-content: center; align-items: center; }
+        .modal-box { background: white; width: 90%; max-width: 450px; border-radius: 12px; padding: 25px; position: relative; box-shadow: 0 10px 25px rgba(0,0,0,0.3); animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+        .close-modal { position: absolute; top: 10px; right: 15px; font-size: 1.8rem; color: #aaa; cursor: pointer; font-weight: bold; }
+        .close-modal:hover { color: #333; }
+        .modal-title { font-size: 1.6rem; font-weight: bold; color: #0d47a1; text-align: center; margin-bottom: 15px; }
+        .modal-logo { text-align: center; margin-bottom: 15px; }
+        .modal-logo i { font-size: 3rem; color: #0d47a1; }
+        .btn-submit-modal { background: #28a745; color: white; border: none; width: 100%; padding: 12px; font-weight: bold; font-size: 1.1rem; border-radius: 5px; cursor: pointer; margin-top: 10px; }
 
         /* Footer */
         footer { background: #0a192f; color: white; padding: 40px 0 20px; }
@@ -91,8 +114,7 @@
             <ul class="nav-menu">
                 <li><a href="#">Trang Chủ</a></li>
                 <li><a href="#danh-sach-lop">Lớp Mới Cần Gia Sư</a></li>
-                <li><a href="#danh-cho-phu-huynh">Dành Cho Phụ Huynh</a></li>
-                <li><a href="#quy-trinh">Quy Trình Nhận Lớp</a></li>
+                <li><a href="#dang-ky-tu-van">Đăng Ký Tư Vấn</a></li>
             </ul>
             <a href="tel:0393676655" class="btn-hotline"><i class="fa-solid fa-phone"></i> 0393.676.655</a>
         </div>
@@ -104,7 +126,7 @@
             <h1>TRUNG TÂM GIA SƯ BÁCH KHOA 247</h1>
             <p>Chuyên cung cấp gia sư Sinh viên & Giáo viên Bách Khoa, Sư Phạm chất lượng cao. Dạy kèm tại nhà & Online tất cả các môn từ lớp 1 - 12, Luyện thi ĐH, Lập trình Python / C++.</p>
             <div class="hero-btns">
-                <a href="https://zalo.me/0393676655" class="btn-hero btn-green" target="_blank"><i class="fa-brands fa-zalo"></i> Đăng Ký Tìm Gia Sư</a>
+                <a href="javascript:void(0)" onclick="openModal()" class="btn-hero btn-green"><i class="fa-solid fa-pen-to-square"></i> Đăng Ký Tìm Gia Sư</a>
                 <a href="tel:0393676655" class="btn-hero btn-white"><i class="fa-solid fa-phone"></i> Hotline: 0393.676.655</a>
             </div>
         </div>
@@ -196,36 +218,53 @@
         </div>
     </div>
 
-    <!-- Why Choose Us -->
-    <section class="why-us">
-        <div class="container">
-            <div class="section-header">
-                <h2>TẠI SAO CHỌN GIA SƯ BÁCH KHOA 247?</h2>
+    <!-- Inline Consultation Section (Ảnh 3) -->
+    <section class="inline-consult-section" id="dang-ky-tu-van">
+        <div class="container consult-wrapper">
+            <div class="consult-image">
+                <img src="https://img.freepik.com/free-vector/customer-support-flat-illustration_23-2148889374.jpg" alt="Tư vấn gia sư">
             </div>
-            <div class="features-grid">
-                <div class="feature-item">
-                    <i class="fa-solid fa-user-check"></i>
-                    <h3>Gia Sư Tuyển Chọn</h3>
-                    <p>100% Gia sư có thẻ sinh viên/bằng cấp rõ ràng từ Bách Khoa, Sư Phạm, KHTN.</p>
+            <div class="consult-form-box">
+                <h2>Đăng ký <span>tư vấn miễn phí</span></h2>
+                <div class="form-group">
+                    <input type="text" id="inline-name" placeholder="Họ tên (*)">
                 </div>
-                <div class="feature-item">
-                    <i class="fa-solid fa-calendar-check"></i>
-                    <h3>Học Thử Miễn Phí</h3>
-                    <p>Dạy thử 1-2 buổi đầu hoàn toàn miễn phí để phụ huynh kiểm tra chất lượng.</p>
+                <div class="form-group">
+                    <input type="tel" id="inline-phone" placeholder="Điện thoại (*)">
                 </div>
-                <div class="feature-item">
-                    <i class="fa-solid fa-arrow-trend-up"></i>
-                    <h3>Cam Kết Tiến Bộ</h3>
-                    <p>Giúp học sinh mất gốc lấy lại kiến thức và đạt điểm cao sau 1 tháng.</p>
+                <div class="form-group">
+                    <textarea id="inline-msg" placeholder="Lời nhắn (Môn học, Lớp, Yêu cầu...)"></textarea>
                 </div>
-                <div class="feature-item">
-                    <i class="fa-solid fa-headset"></i>
-                    <h3>Hỗ Trợ 24/7</h3>
-                    <p>Đổi gia sư ngay lập tức nếu phụ huynh hoặc học sinh chưa hài lòng.</p>
-                </div>
+                <button class="btn-submit-inline" onclick="submitInlineForm()">ĐĂNG KÝ</button>
             </div>
         </div>
     </section>
+
+    <!-- Floating Flashing Red Button (Ảnh 2) -->
+    <div class="floating-consult-btn" onclick="openModal()">
+        <i class="fa-solid fa-bell"></i> Đăng Ký Tư Vấn Miễn Phí
+    </div>
+
+    <!-- Popup Modal (Ảnh 1) -->
+    <div class="modal-overlay" id="consultModal">
+        <div class="modal-box">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div class="modal-title">ĐĂNG KÝ TƯ VẤN</div>
+            <div class="modal-logo">
+                <i class="fa-solid fa-user-graduate"></i>
+            </div>
+            <div class="form-group">
+                <input type="text" id="modal-name" placeholder="Họ tên (*)">
+            </div>
+            <div class="form-group">
+                <input type="tel" id="modal-phone" placeholder="Điện thoại (*)">
+            </div>
+            <div class="form-group">
+                <textarea id="modal-msg" placeholder="Lời nhắn (Nhu cầu tìm gia sư...)"></textarea>
+            </div>
+            <button class="btn-submit-modal" onclick="submitModalForm()">ĐĂNG KÝ</button>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer>
@@ -255,6 +294,63 @@
             <p>&copy; 2026 Trung Tâm Gia Sư Bách Khoa 247. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- JavaScript Handling -->
+    <script>
+        const myPhone = "0393676655";
+
+        // Tự động bật Popup sau 5 giây truy cập web
+        setTimeout(function() {
+            openModal();
+        }, 5000);
+
+        function openModal() {
+            document.getElementById('consultModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('consultModal').style.display = 'none';
+        }
+
+        // Đóng popup khi click ngoài hộp thoại
+        window.onclick = function(event) {
+            let modal = document.getElementById('consultModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        // Gửi dữ liệu form Inline qua Zalo
+        function submitInlineForm() {
+            let name = document.getElementById('inline-name').value.trim();
+            let phone = document.getElementById('inline-phone').value.trim();
+            let msg = document.getElementById('inline-msg').value.trim();
+
+            if (!name || !phone) {
+                alert('Vui lòng điền Họ tên và Số điện thoại!');
+                return;
+            }
+
+            let text = `Chào Trung Tâm, tôi cần tư vấn gia sư:\n- Họ tên: ${name}\n- SĐT: ${phone}\n- Lời nhắn: ${msg}`;
+            window.open(`https://zalo.me/${myPhone}?text=${encodeURIComponent(text)}`, '_blank');
+        }
+
+        // Gửi dữ liệu form Modal qua Zalo
+        function submitModalForm() {
+            let name = document.getElementById('modal-name').value.trim();
+            let phone = document.getElementById('modal-phone').value.trim();
+            let msg = document.getElementById('modal-msg').value.trim();
+
+            if (!name || !phone) {
+                alert('Vui lòng điền Họ tên và Số điện thoại!');
+                return;
+            }
+
+            let text = `Chào Trung Tâm, tôi đăng ký tư vấn qua Popup:\n- Họ tên: ${name}\n- SĐT: ${phone}\n- Lời nhắn: ${msg}`;
+            window.open(`https://zalo.me/${myPhone}?text=${encodeURIComponent(text)}`, '_blank');
+            closeModal();
+        }
+    </script>
 
 </body>
 </html>
