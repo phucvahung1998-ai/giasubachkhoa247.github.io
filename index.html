@@ -6,9 +6,17 @@
     <title>Trung Tâm Gia Sư Bách Khoa 247 - Uy Tín & Chất Lượng Hàng Đầu</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        :root { --primary: #0d47a1; --secondary: #1565c0; --accent: #28a745; --danger: #dc3545; --light: #f8f9fa; --dark: #212529; }
+        :root { 
+            --primary: #0d47a1; 
+            --secondary: #1565c0; 
+            --accent: #28a745; 
+            --danger: #dc3545; 
+            --pink: #e91e63;
+            --light: #f8f9fa; 
+            --dark: #212529; 
+        }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; }
-        body { background-color: #f4f6f9; color: var(--dark); line-height: 1.6; }
+        body { background-color: #f4f6f9; color: var(--dark); line-height: 1.6; overflow-x: hidden; }
 
         /* Top Bar & Header */
         .top-bar { background: #0a3578; color: white; font-size: 0.85rem; padding: 6px 0; }
@@ -23,14 +31,22 @@
 
         .container { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
 
-        /* Hero Banner */
-        .hero { background: linear-gradient(rgba(13, 71, 161, 0.85), rgba(21, 101, 192, 0.85)), url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80'); background-size: cover; background-position: center; color: white; padding: 60px 0; text-align: center; }
-        .hero h1 { font-size: 2.3rem; margin-bottom: 15px; text-transform: uppercase; }
-        .hero p { font-size: 1.1rem; max-width: 800px; margin: 0 auto 25px; }
+        /* Hero Banner Bright & Modern */
+        .hero { 
+            background: linear-gradient(135deg, rgba(13, 71, 161, 0.88), rgba(233, 30, 99, 0.75)), url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1350&q=80'); 
+            background-size: cover; 
+            background-position: center; 
+            color: white; 
+            padding: 70px 0; 
+            text-align: center; 
+        }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 15px; text-transform: uppercase; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+        .hero p { font-size: 1.2rem; max-width: 850px; margin: 0 auto 25px; text-shadow: 0 1px 2px rgba(0,0,0,0.3); }
         .hero-btns { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-        .btn-hero { padding: 12px 25px; border-radius: 5px; font-weight: bold; text-decoration: none; font-size: 1rem; }
+        .btn-hero { padding: 12px 28px; border-radius: 30px; font-weight: bold; text-decoration: none; font-size: 1rem; box-shadow: 0 4px 10px rgba(0,0,0,0.15); transition: 0.3s; }
         .btn-green { background: var(--accent); color: white; }
         .btn-white { background: white; color: var(--primary); }
+        .btn-hero:hover { transform: translateY(-3px); }
 
         /* Stats Bar */
         .stats { background: white; padding: 25px 0; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 40px; }
@@ -38,11 +54,28 @@
         .stat-item h3 { font-size: 2rem; color: var(--primary); }
         .stat-item p { color: #666; font-size: 0.9rem; font-weight: 600; }
 
-        /* Classes Grid */
+        /* Student Carousel Section (Học Sinh Tiêu Biểu Auto-scroll) */
+        .students-section { background: white; padding: 50px 0; margin: 40px 0; }
         .section-header { text-align: center; margin-bottom: 35px; }
-        .section-header h2 { font-size: 1.8rem; color: var(--primary); text-transform: uppercase; position: relative; padding-bottom: 10px; }
-        .section-header h2::after { content: ''; width: 60px; height: 3px; background: var(--danger); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
+        .section-header h2 { font-size: 2rem; color: var(--primary); text-transform: uppercase; position: relative; padding-bottom: 10px; display: inline-block; }
+        .section-header h2::after { content: ''; width: 80px; height: 3px; background: var(--pink); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
 
+        .slider-container { overflow: hidden; width: 100%; position: relative; padding: 10px 0; }
+        .slider-track { display: flex; width: calc(300px * 20); animation: scroll 30s linear infinite; }
+        .slider-track:hover { animation-play-state: paused; }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-300px * 10)); }
+        }
+
+        .student-card { width: 280px; margin: 0 10px; text-align: center; flex-shrink: 0; background: #fff; padding: 20px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); border: 1px solid #f0f0f0; }
+        .avatar-wrapper { width: 130px; height: 130px; margin: 0 auto 15px; border-radius: 50%; padding: 5px; background: linear-gradient(135deg, var(--pink), var(--primary)); position: relative; }
+        .avatar-wrapper img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 3px solid white; }
+        .student-name { font-size: 1.1rem; font-weight: bold; color: var(--pink); margin-bottom: 5px; }
+        .student-achievement { font-size: 0.88rem; color: #555; background: #fdf2f8; padding: 6px 10px; border-radius: 8px; font-weight: 600; }
+
+        /* Classes Grid */
         .grid-classes { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; margin-bottom: 40px; }
         .class-card { background: white; border-radius: 8px; border: 1px solid #e1e4e8; overflow: hidden; transition: 0.3s; }
         .class-card:hover { box-shadow: 0 8px 20px rgba(0,0,0,0.12); }
@@ -56,7 +89,7 @@
         .card-foot { padding: 12px 15px; background: #fafafa; border-top: 1px solid #eee; text-align: center; }
         .btn-apply { display: block; width: 100%; background: var(--accent); color: white; padding: 9px; border-radius: 5px; text-decoration: none; font-weight: bold; }
 
-        /* Inline Form Section (Ảnh 3) */
+        /* Inline Form Section */
         .inline-consult-section { background: #fff5f5; padding: 40px 0; border-top: 2px dashed #ffc107; border-bottom: 2px dashed #ffc107; margin: 40px 0; }
         .consult-wrapper { display: flex; align-items: center; justify-content: space-between; gap: 30px; flex-wrap: wrap; }
         .consult-image { flex: 1; min-width: 280px; text-align: center; }
@@ -70,7 +103,7 @@
         .btn-submit-inline { background: #ff9800; color: white; border: none; padding: 12px 30px; font-weight: bold; font-size: 1rem; border-radius: 5px; cursor: pointer; display: block; margin: 0 auto; transition: 0.3s; }
         .btn-submit-inline:hover { background: #e68a00; }
 
-        /* Floating Flashing Red Button (Ảnh 2) */
+        /* Floating Red Consult Button */
         .floating-consult-btn { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 1000; background: #ff2a4b; color: white; padding: 12px 30px; border-radius: 30px; font-weight: bold; font-size: 1.05rem; box-shadow: 0 4px 15px rgba(255, 42, 75, 0.5); cursor: pointer; border: 2px solid white; animation: pulse-red 1.5s infinite; text-align: center; text-decoration: none; }
         @keyframes pulse-red {
             0% { transform: translateX(-50%) scale(1); box-shadow: 0 0 0 0 rgba(255, 42, 75, 0.7); }
@@ -78,7 +111,20 @@
             100% { transform: translateX(-50%) scale(1); box-shadow: 0 0 0 0 rgba(255, 42, 75, 0); }
         }
 
-        /* Modal Popup (Ảnh 1) */
+        /* Floating Zalo Button Widget */
+        .zalo-widget { position: fixed; bottom: 85px; right: 20px; z-index: 1001; display: flex; flex-direction: column; align-items: center; text-decoration: none; }
+        .zalo-icon-box { width: 60px; height: 60px; background: #0088fe; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 4px 15px rgba(0,136,254,0.4); position: relative; animation: zalo-shake 2s infinite; }
+        .zalo-icon-box img { width: 36px; height: 36px; }
+        .zalo-badge { position: absolute; top: -2px; right: -2px; background: #ff0000; color: white; border-radius: 50%; width: 22px; height: 22px; font-size: 12px; font-weight: bold; display: flex; justify-content: center; align-items: center; border: 2px solid white; }
+        
+        @keyframes zalo-shake {
+            0%, 100% { transform: rotate(0deg); }
+            10%, 30%, 50% { transform: rotate(-8deg); }
+            20%, 40% { transform: rotate(8deg); }
+            60% { transform: rotate(0deg); }
+        }
+
+        /* Modal Popup */
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 2000; display: none; justify-content: center; align-items: center; }
         .modal-box { background: white; width: 90%; max-width: 450px; border-radius: 12px; padding: 25px; position: relative; box-shadow: 0 10px 25px rgba(0,0,0,0.3); animation: fadeIn 0.3s ease; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
@@ -113,6 +159,7 @@
             <a href="#" class="logo"><i class="fa-solid fa-graduation-cap"></i> GIA SƯ BÁCH KHOA 247</a>
             <ul class="nav-menu">
                 <li><a href="#">Trang Chủ</a></li>
+                <li><a href="#hoc-sinh-tieu-bieu">Học Sinh Tiêu Biểu</a></li>
                 <li><a href="#danh-sach-lop">Lớp Mới Cần Gia Sư</a></li>
                 <li><a href="#dang-ky-tu-van">Đăng Ký Tư Vấn</a></li>
             </ul>
@@ -120,14 +167,14 @@
         </div>
     </header>
 
-    <!-- Hero Banner -->
+    <!-- Hero Banner (Hình tươi sáng, rực rỡ) -->
     <section class="hero">
         <div class="container">
             <h1>TRUNG TÂM GIA SƯ BÁCH KHOA 247</h1>
             <p>Chuyên cung cấp gia sư Sinh viên & Giáo viên Bách Khoa, Sư Phạm chất lượng cao. Dạy kèm tại nhà & Online tất cả các môn từ lớp 1 - 12, Luyện thi ĐH, Lập trình Python / C++.</p>
             <div class="hero-btns">
                 <a href="javascript:void(0)" onclick="openModal()" class="btn-hero btn-green"><i class="fa-solid fa-pen-to-square"></i> Đăng Ký Tìm Gia Sư</a>
-                <a href="tel:0393676655" class="btn-hero btn-white"><i class="fa-solid fa-phone"></i> Hotline: 0393.676.655</a>
+                <a href="https://zalo.me/0393676655" target="_blank" class="btn-hero btn-white"><i class="fa-brands fa-zalo"></i> Chat Zalo: 0393.676.655</a>
             </div>
         </div>
     </section>
@@ -150,6 +197,124 @@
             <div class="stat-item">
                 <h3>100%</h3>
                 <p>HỌC THỬ 2 BUỔI MIỄN PHÍ</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Học Sinh Tiêu Biểu (Chạy Tự Động 10 Học Sinh) -->
+    <section class="students-section" id="hoc-sinh-tieu-bieu">
+        <div class="container">
+            <div class="section-header">
+                <h2>HỌC SINH TIỂU BIỂU</h2>
+                <p style="color: #666; margin-top: 5px;">Tự hào về thành tích xuất sắc của các em học sinh tại Trung Tâm</p>
+            </div>
+        </div>
+
+        <div class="slider-container">
+            <div class="slider-track">
+                <!-- 10 Học Sinh -->
+                <div class="student-card">
+                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=300" alt="Học sinh"></div>
+                    <div class="student-name">Phạm Minh Hằng</div>
+                    <div class="student-achievement">Giải Nhất cuộc thi Viết Chữ Đẹp</div>
+                </div>
+                <div class="student-card">
+                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=300" alt="Học sinh"></div>
+                    <div class="student-name">Bùi Việt Hùng</div>
+                    <div class="student-achievement">Giải Nhì HSG Toán Cấp Quốc Gia</div>
+                </div>
+                <div class="student-card">
+                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=300" alt="Học sinh"></div>
+                    <div class="student-name">Trần Hà Linh</div>
+                    <div class="student-achievement">HSG Môn Tiếng Anh 3 Năm Liền</div>
+                </div>
+                <div class="student-card">
+                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300" alt="Học sinh"></div>
+                    <div class="student-name">Nguyễn Hoàng Nam</div>
+                    <div class="student-achievement">Thủ Khoa ĐH Bách Khoa (29.5đ)</div>
+                </div>
+                <div class="student-card">
+                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300" alt="Học sinh"></div>
+                    <div class="student-name">Lê Thảo My</div>
+                    <div class="student-achievement">Giải Nhất HSG Lý Cấp Thành Phố</div>
+                </div>
+                <div class="student-card">
+                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300" alt="Học sinh"></div>
+                    <div class="student-name">Vũ Quốc Anh</div>
+                    <div class="student-achievement">Huy Chương Vàng Olympic Toán</div>
+                </div>
+                <div class="student-card">
+                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300" alt="Học sinh"></div>
+                    <div class="student-name">Đặng Bảo Ngọc</div>
+                    <div class="student-achievement">IELTS 8.0 Ngay Từ Lớp 11</div>
+                </div>
+                <div class="student-card">
+                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300" alt="Học sinh"></div>
+                    <div class="student-name">Ngô Đức Mạnh</div>
+                    <div class="student-achievement">Giải Nhất Tin Học Trẻ Toàn Quốc</div>
+                </div>
+                <div class="student-card">
+                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300" alt="Học sinh"></div>
+                    <div class="student-name">Phan Khánh Vân</div>
+                    <div class="student-achievement">Giải Nhất HSG Hóa Cấp Tỉnh</div>
+                </div>
+                <div class="student-card">
+                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=300" alt="Học sinh"></div>
+                    <div class="student-name">Hoàng Anh Tuấn</div>
+                    <div class="student-achievement">Đậu Chuyên KHTN Môn Toán</div>
+                </div>
+
+                <!-- Duplicate 10 Học Sinh để hiệu ứng cuộn lặp vô tận seamless -->
+                <div class="student-card">
+                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=300" alt="Học sinh"></div>
+                    <div class="student-name">Phạm Minh Hằng</div>
+                    <div class="student-achievement">Giải Nhất cuộc thi Viết Chữ Đẹp</div>
+                </div>
+                <div class="student-card">
+                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=300" alt="Học sinh"></div>
+                    <div class="student-name">Bùi Việt Hùng</div>
+                    <div class="student-achievement">Giải Nhì HSG Toán Cấp Quốc Gia</div>
+                </div>
+                <div class="student-card">
+                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=300" alt="Học sinh"></div>
+                    <div class="student-name">Trần Hà Linh</div>
+                    <div class="student-achievement">HSG Môn Tiếng Anh 3 Năm Liền</div>
+                </div>
+                <div class="student-card">
+                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300" alt="Học sinh"></div>
+                    <div class="student-name">Nguyễn Hoàng Nam</div>
+                    <div class="student-achievement">Thủ Khoa ĐH Bách Khoa (29.5đ)</div>
+                </div>
+                <div class="student-card">
+                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300" alt="Học sinh"></div>
+                    <div class="student-name">Lê Thảo My</div>
+                    <div class="student-achievement">Giải Nhất HSG Lý Cấp Thành Phố</div>
+                </div>
+                <div class="student-card">
+                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300" alt="Học sinh"></div>
+                    <div class="student-name">Vũ Quốc Anh</div>
+                    <div class="student-achievement">Huy Chương Vàng Olympic Toán</div>
+                </div>
+                <div class="student-card">
+                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300" alt="Học sinh"></div>
+                    <div class="student-name">Đặng Bảo Ngọc</div>
+                    <div class="student-achievement">IELTS 8.0 Ngay Từ Lớp 11</div>
+                </div>
+                <div class="student-card">
+                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300" alt="Học sinh"></div>
+                    <div class="student-name">Ngô Đức Mạnh</div>
+                    <div class="student-achievement">Giải Nhất Tin Học Trẻ Toàn Quốc</div>
+                </div>
+                <div class="student-card">
+                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300" alt="Học sinh"></div>
+                    <div class="student-name">Phan Khánh Vân</div>
+                    <div class="student-achievement">Giải Nhất HSG Hóa Cấp Tỉnh</div>
+                </div>
+                <div class="student-card">
+                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=300" alt="Học sinh"></div>
+                    <div class="student-name">Hoàng Anh Tuấn</div>
+                    <div class="student-achievement">Đậu Chuyên KHTN Môn Toán</div>
+                </div>
             </div>
         </div>
     </section>
@@ -218,7 +383,7 @@
         </div>
     </div>
 
-    <!-- Inline Consultation Section (Ảnh 3) -->
+    <!-- Inline Consultation Section -->
     <section class="inline-consult-section" id="dang-ky-tu-van">
         <div class="container consult-wrapper">
             <div class="consult-image">
@@ -240,12 +405,20 @@
         </div>
     </section>
 
-    <!-- Floating Flashing Red Button (Ảnh 2) -->
+    <!-- Floating Flashing Red Button -->
     <div class="floating-consult-btn" onclick="openModal()">
         <i class="fa-solid fa-bell"></i> Đăng Ký Tư Vấn Miễn Phí
     </div>
 
-    <!-- Popup Modal (Ảnh 1) -->
+    <!-- Zalo Floating Widget Button -->
+    <a href="https://zalo.me/0393676655" target="_blank" class="zalo-widget" title="Chat Zalo ngay">
+        <div class="zalo-icon-box">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo">
+            <span class="zalo-badge">1</span>
+        </div>
+    </a>
+
+    <!-- Popup Modal -->
     <div class="modal-overlay" id="consultModal">
         <div class="modal-box">
             <span class="close-modal" onclick="closeModal()">&times;</span>
@@ -299,7 +472,7 @@
     <script>
         const myPhone = "0393676655";
 
-        // Tự động bật Popup sau 5 giây truy cập web
+        // Tự động bật Popup sau 5 giây
         setTimeout(function() {
             openModal();
         }, 5000);
@@ -312,7 +485,6 @@
             document.getElementById('consultModal').style.display = 'none';
         }
 
-        // Đóng popup khi click ngoài hộp thoại
         window.onclick = function(event) {
             let modal = document.getElementById('consultModal');
             if (event.target == modal) {
