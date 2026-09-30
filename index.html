@@ -3,54 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gia Sư Bách Khoa 247 - Uy Tín & Chất Lượng</title>
+    <title>Gia Sư Bách Khoa 247 - Danh Sách Lớp Mới Cần Gia Sư</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.6; }
-        header { background: #0056b3; color: white; padding: 40px 20px; text-align: center; }
-        header h1 { margin: 0; font-size: 2.2em; }
-        header p { font-size: 1.1em; margin-top: 10px; }
-        .container { max-width: 900px; margin: 30px auto; padding: 0 20px; }
-        .services { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 20px; }
-        .card { flex: 1; min-width: 250px; background: #f4f4f4; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .cta { text-align: center; margin: 40px 0; padding: 30px; background: #e6f2ff; border-radius: 8px; }
-        .btn { background: #28a745; color: white; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 1.1em; }
-        footer { background: #222; color: white; text-align: center; padding: 15px 0; font-size: 0.9em; }
+        :root { --primary: #0056b3; --accent: #28a745; --bg: #f4f6f9; --text: #333; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
+        
+        /* Navigation & Header */
+        header { background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); text-decoration: none; display: flex; align-items: center; gap: 8px; }
+        .contact-top { display: flex; gap: 15px; align-items: center; }
+        .btn-call { background: var(--accent); color: white; padding: 8px 16px; border-radius: 20px; text-decoration: none; font-weight: bold; font-size: 0.9rem; }
+        
+        /* Banner & Filter */
+        .hero { background: linear-gradient(135deg, #0056b3, #003366); color: white; padding: 35px 20px; text-align: center; }
+        .hero h1 { font-size: 1.8rem; margin-bottom: 8px; }
+        .search-box { max-width: 1000px; margin: 20px auto 0; background: white; padding: 15px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.15); display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+        .search-box select, .search-box input { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; outline: none; }
+        .btn-search { background: var(--primary); color: white; border: none; padding: 10px; border-radius: 5px; font-weight: bold; cursor: pointer; }
+
+        /* Main Content */
+        .container { max-width: 1200px; margin: 30px auto; padding: 0 15px; }
+        .section-title { font-size: 1.4rem; color: var(--primary); margin-bottom: 20px; border-bottom: 2px solid var(--primary); padding-bottom: 8px; display: flex; justify-content: space-between; align-items: center; }
+        
+        /* Class Grid */
+        .grid-classes { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; }
+        .class-card { background: white; border-radius: 8px; border: 1px solid #e1e4e8; overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; position: relative; }
+        .class-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+        .card-header { background: #eef5ff; padding: 12px 15px; border-bottom: 1px solid #e1e4e8; display: flex; justify-content: space-between; align-items: center; }
+        .code { font-weight: bold; color: var(--primary); font-size: 1.1rem; }
+        .status { font-size: 0.8rem; padding: 4px 10px; border-radius: 12px; font-weight: bold; }
+        .status-new { background: #d4edda; color: #155724; }
+        .status-process { background: #fff3cd; color: #856404; }
+
+        .card-body { padding: 15px; font-size: 0.95rem; }
+        .info-row { display: flex; margin-bottom: 8px; }
+        .info-label { width: 110px; font-weight: 600; color: #555; flex-shrink: 0; }
+        .info-val { color: #222; font-weight: 500; }
+        .price { color: #d9534f; font-weight: bold; font-size: 1.1rem; }
+
+        .card-footer { padding: 12px 15px; background: #fafafa; border-top: 1px solid #eee; display: flex; gap: 10px; }
+        .btn-apply { flex: 1; text-align: center; background: var(--primary); color: white; padding: 8px; border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 0.9rem; }
+        .btn-detail { flex: 1; text-align: center; background: #6c757d; color: white; padding: 8px; border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 0.9rem; }
+
+        footer { background: #1a252f; color: white; padding: 30px 20px; margin-top: 50px; text-align: center; font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>GIA SƯ BÁCH KHOA 247</h1>
-        <p>Đội ngũ gia sư chất lượng cao - Dạy kèm Toán, Lý, Hóa, Anh, Lập trình</p>
-    </header>
-
-    <div class="container">
-        <h2>Dịch Vụ Của Chúng Tôi</h2>
-        <div class="services">
-            <div class="card">
-                <h3>📚 Dạy Kèm Phổ Thông</h3>
-                <p>Bổ trợ kiến thức Toán, Lý, Hóa từ lớp 1 đến lớp 12. Ôn thi vào 10 và Ôn thi Tốt nghiệp THPT Quốc gia.</p>
-            </div>
-            <div class="card">
-                <h3>💻 Dạy Lập Trình & Tin Học</h3>
-                <p>Hướng dẫn lập trình Python, C++, Tin học văn phòng, tư duy thuật toán cho học sinh & sinh viên.</p>
-            </div>
-            <div class="card">
-                <h3>🎯 Cam Kết Chất Lượng</h3>
-                <p>Học thử 1-2 buổi miễn phí. Cam kết cải thiện rõ rệt điểm số và tư duy học tập sau 1 tháng.</p>
+        <div class="nav-container">
+            <a href="#" class="logo"><i class="fa-solid fa-graduation-cap"></i> GIA SƯ BÁCH KHOA 247</a>
+            <div class="contact-top">
+                <a href="https://zalo.me/0900000000" class="btn-call" target="_blank"><i class="fa-solid fa-phone"></i> Hotline / Zalo: 0900.000.000</a>
             </div>
         </div>
+    </header>
 
-        <div class="cta">
-            <h2>Đăng Ký Tư Vấn & Học Thử Miễn Phí</h2>
-            <p>Liên hệ ngay để nhận lộ trình học tập tối ưu cho con bạn!</p>
-            <br>
-            <a href="https://zalo.me/0900000000" class="btn" target="_blank">📲 Liên Hệ Qua Zalo / Hotline</a>
+    <section class="hero">
+        <h1>DANH SÁCH LỚP MỚI CẦN GIA SƯ</h1>
+        <p>Cập nhật liên tục các lớp dạy kèm Toán, Lý, Hóa, Anh, Lập trình mới nhất</p>
+        
+        <div class="search-box">
+            <select>
+                <option value="">-- Chọn Môn Học --</option>
+                <option>Toán</option>
+                <option>Vật Lý</option>
+                <option>Hóa Học</option>
+                <option>Tiếng Anh</option>
+                <option>Lập Trình Python / C++</option>
+            </select>
+            <select>
+                <option value="">-- Chọn Trình Độ --</option>
+                <option>Tiểu học (Lớp 1 - 5)</option>
+                <option>THCS (Lớp 6 - 9)</option>
+                <option>THPT (Lớp 10 - 12)</option>
+                <option>Luyện Thi Đại Học</option>
+            </select>
+            <input type="text" placeholder="Nhập khu vực (Quận/Huyện)...">
+            <button class="btn-search"><i class="fa-solid fa-magnifying-glass"></i> Tìm Lớp Học</button>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="section-title">
+            <span><i class="fa-solid fa-list-check"></i> LỚP CHỜ GIA SƯ NHẬN (CẬP NHẬT MỚI)</span>
+        </div>
+
+        <div class="grid-classes">
+            <!-- Lớp 1 -->
+            <div class="class-card">
+                <div class="card-header">
+                    <span class="code">Mã Lớp: BK-101</span>
+                    <span class="status status-new">Chưa giao</span>
+                </div>
+                <div class="card-body">
+                    <div class="info-row"><span class="info-label">Môn học:</span><span class="info-val">Toán & Vật Lý 12</span></div>
+                    <div class="info-row"><span class="info-label">Địa điểm:</span><span class="info-val">Quận Cầu Giấy / Online</span></div>
+                    <div class="info-row"><span class="info-label">Học phí:</span><span class="info-val price">2.500.000 đ / tháng</span></div>
+                    <div class="info-row"><span class="info-label">Thời gian:</span><span class="info-val">3 buổi/tuần (Buổi tối)</span></div>
+                    <div class="info-row"><span class="info-label">Yêu cầu:</span><span class="info-val">Sinh viên/Giáo viên Bách Khoa, nhiệt tình</span></div>
+                </div>
+                <div class="card-footer">
+                    <a href="https://zalo.me/0900000000" class="btn-apply" target="_blank"><i class="fa-brands fa-zalo"></i> Đăng Ký Nhận Lớp</a>
+                </div>
+            </div>
+
+            <!-- Lớp 2 -->
+            <div class="class-card">
+                <div class="card-header">
+                    <span class="code">Mã Lớp: BK-102</span>
+                    <span class="status status-new">Chưa giao</span>
+                </div>
+                <div class="card-body">
+                    <div class="info-row"><span class="info-label">Môn học:</span><span class="info-val">Lập Trình Python Cơ Bản</span></div>
+                    <div class="info-row"><span class="info-label">Địa điểm:</span><span class="info-val">Học Online 1 kèm 1</span></div>
+                    <div class="info-row"><span class="info-label">Học phí:</span><span class="info-val price">3.000.000 đ / tháng</span></div>
+                    <div class="info-row"><span class="info-label">Thời gian:</span><span class="info-val">2 buổi/tuần (Cuối tuần)</span></div>
+                    <div class="info-row"><span class="info-label">Yêu cầu:</span><span class="info-val">Có kinh nghiệm làm dự án Python</span></div>
+                </div>
+                <div class="card-footer">
+                    <a href="https://zalo.me/0900000000" class="btn-apply" target="_blank"><i class="fa-brands fa-zalo"></i> Đăng Ký Nhận Lớp</a>
+                </div>
+            </div>
+
+            <!-- Lớp 3 -->
+            <div class="class-card">
+                <div class="card-header">
+                    <span class="code">Mã Lớp: BK-103</span>
+                    <span class="status status-process">Đang xác minh</span>
+                </div>
+                <div class="card-body">
+                    <div class="info-row"><span class="info-label">Môn học:</span><span class="info-val">Tiếng Anh Lớp 9 Ôn Thi Vào 10</span></div>
+                    <div class="info-row"><span class="info-label">Địa điểm:</span><span class="info-val">Quận Hai Bà Trưng</span></div>
+                    <div class="info-row"><span class="info-label">Học phí:</span><span class="info-val price">2.000.000 đ / tháng</span></div>
+                    <div class="info-row"><span class="info-label">Thời gian:</span><span class="info-val">2 buổi/tuần</span></div>
+                    <div class="info-row"><span class="info-label">Yêu cầu:</span><span class="info-val">Gia sư Nữ, IELTS 6.5+</span></div>
+                </div>
+                <div class="card-footer">
+                    <a href="https://zalo.me/0900000000" class="btn-apply" target="_blank"><i class="fa-brands fa-zalo"></i> Đăng Ký Nhận Lớp</a>
+                </div>
+            </div>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 Gia Sư Bách Khoa 247. All rights reserved.</p>
+        <p><strong>GIA SƯ BÁCH KHOA 247</strong> - Kết nối Tri Thức - Vững Bước Tương Lai</p>
+        <p style="margin-top: 5px; color: #888;">&copy; 2026 All rights reserved.</p>
     </footer>
 
 </body>
