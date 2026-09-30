@@ -3,505 +3,256 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trung Tâm Gia Sư Bách Khoa 247 - Uy Tín & Chất Lượng Hàng Đầu</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>Trung Tâm Gia Sư Bách Khoa 247</title>
     <style>
-        :root { 
-            --primary: #0d47a1; 
-            --secondary: #1565c0; 
-            --accent: #28a745; 
-            --danger: #dc3545; 
-            --pink: #e91e63;
-            --light: #f8f9fa; 
-            --dark: #212529; 
-            --sidebar-header: #007bff;
-        }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; }
-        body { background-color: #f4f6f9; color: var(--dark); line-height: 1.6; overflow-x: hidden; }
-
-        /* Top Bar & Header */
-        .top-bar { background: #0a3578; color: white; font-size: 0.85rem; padding: 6px 0; }
-        .top-bar .container { display: flex; justify-content: space-between; align-items: center; }
-        header { background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 999; }
-        .header-container { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; }
-        .logo { font-size: 1.6rem; font-weight: bold; color: var(--primary); text-decoration: none; display: flex; align-items: center; gap: 10px; }
-        .nav-menu { display: flex; list-style: none; gap: 20px; font-weight: 600; }
-        .nav-menu a { text-decoration: none; color: #333; transition: 0.2s; }
-        .nav-menu a:hover { color: var(--primary); }
-        .btn-hotline { background: var(--danger); color: white !important; padding: 8px 16px; border-radius: 20px; text-decoration: none; font-weight: bold; display: flex; align-items: center; gap: 6px; }
-
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
-
-        /* Layout Grid for Main Content + Sidebar */
-        .main-layout { display: flex; gap: 25px; margin-top: 30px; }
-        .main-content { flex: 1; min-width: 0; }
-        .sidebar { width: 300px; flex-shrink: 0; }
-
-        @media (max-width: 992px) {
-            .main-layout { flex-direction: column; }
-            .sidebar { width: 100%; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        /* Sidebar Styling (Tương tự ảnh mẫu) */
-        .widget-box { background: white; border: 1px solid #dcdcdc; border-radius: 4px; margin-bottom: 20px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.03); }
-        .widget-title { background: var(--sidebar-header); color: white; padding: 10px 15px; font-weight: bold; text-transform: uppercase; font-size: 0.95rem; text-align: center; letter-spacing: 0.5px; }
-        .widget-list { list-style: none; }
-        .widget-list li { border-bottom: 1px solid #f0f0f0; }
-        .widget-list li:last-child { border-bottom: none; }
-        .widget-list a { display: flex; align-items: center; gap: 8px; padding: 10px 15px; color: #333; text-decoration: none; font-size: 0.92rem; transition: 0.2s; }
-        .widget-list a:hover { background: #eef5ff; color: var(--primary); padding-left: 18px; }
-        .widget-list a::before { content: "■"; color: #ff6f00; font-size: 0.6rem; }
-        .widget-list a.highlight { color: #dc3545; font-weight: bold; }
-
-        /* Hero Banner Bright & Modern */
-        .hero { 
-            background: linear-gradient(135deg, rgba(13, 71, 161, 0.88), rgba(233, 30, 99, 0.75)), url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1350&q=80'); 
-            background-size: cover; 
-            background-position: center; 
-            color: white; 
-            padding: 60px 0; 
-            text-align: center; 
-        }
-        .hero h1 { font-size: 2.2rem; margin-bottom: 15px; text-transform: uppercase; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
-        .hero p { font-size: 1.1rem; max-width: 850px; margin: 0 auto 25px; text-shadow: 0 1px 2px rgba(0,0,0,0.3); }
-        .hero-btns { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-        .btn-hero { padding: 10px 24px; border-radius: 30px; font-weight: bold; text-decoration: none; font-size: 0.95rem; box-shadow: 0 4px 10px rgba(0,0,0,0.15); transition: 0.3s; }
-        .btn-green { background: var(--accent); color: white; }
-        .btn-white { background: white; color: var(--primary); }
-        .btn-hero:hover { transform: translateY(-3px); }
-
-        /* Student Carousel Section (Học Sinh Tiêu Biểu Việt Nam) */
-        .students-section { background: white; padding: 40px 0; margin: 30px 0; border-radius: 8px; }
-        .section-header { text-align: center; margin-bottom: 30px; }
-        .section-header h2 { font-size: 1.8rem; color: var(--primary); text-transform: uppercase; position: relative; padding-bottom: 10px; display: inline-block; }
-        .section-header h2::after { content: ''; width: 80px; height: 3px; background: var(--pink); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
-
-        .slider-container { overflow: hidden; width: 100%; position: relative; padding: 10px 0; }
-        .slider-track { display: flex; width: calc(260px * 20); animation: scroll 30s linear infinite; }
-        .slider-track:hover { animation-play-state: paused; }
-
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-260px * 10)); }
+        body {
+            background-color: #f4f6f9;
+            color: #333;
         }
 
-        .student-card { width: 240px; margin: 0 10px; text-align: center; flex-shrink: 0; background: #fff; padding: 18px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); border: 1px solid #f0f0f0; }
-        .avatar-wrapper { width: 120px; height: 120px; margin: 0 auto 12px; border-radius: 50%; padding: 4px; background: linear-gradient(135deg, var(--pink), var(--primary)); position: relative; }
-        .avatar-wrapper img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 3px solid white; }
-        .student-name { font-size: 1.05rem; font-weight: bold; color: var(--pink); margin-bottom: 5px; }
-        .student-achievement { font-size: 0.85rem; color: #555; background: #fdf2f8; padding: 5px 8px; border-radius: 6px; font-weight: 600; }
-
-        /* Classes Grid */
-        .grid-classes { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-bottom: 30px; }
-        .class-card { background: white; border-radius: 8px; border: 1px solid #e1e4e8; overflow: hidden; transition: 0.3s; display: flex; flex-direction: column; justify-content: space-between; }
-        .class-card:hover { box-shadow: 0 6px 16px rgba(0,0,0,0.12); }
-        .card-head { background: #eef5ff; padding: 10px 12px; border-bottom: 1px solid #ddd; display: flex; justify-content: space-between; align-items: center; }
-        .code { font-weight: bold; color: var(--primary); font-size: 1rem; }
-        .badge { background: #d4edda; color: #155724; padding: 2px 8px; border-radius: 10px; font-size: 0.75rem; font-weight: bold; }
-        .card-body { padding: 12px; font-size: 0.9rem; }
-        .info-row { display: flex; margin-bottom: 6px; }
-        .info-label { width: 90px; font-weight: bold; color: #555; flex-shrink: 0; }
-        .price { color: var(--danger); font-weight: bold; font-size: 1rem; }
-        .card-foot { padding: 10px 12px; background: #fafafa; border-top: 1px solid #eee; text-align: center; }
-        .btn-apply { display: block; width: 100%; background: var(--accent); color: white; padding: 8px; border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 0.9rem; transition: 0.2s; }
-        .btn-apply:hover { background: #218838; }
-
-        /* Floating Widgets */
-        .floating-consult-btn { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 1000; background: #ff2a4b; color: white; padding: 12px 30px; border-radius: 30px; font-weight: bold; font-size: 1.05rem; box-shadow: 0 4px 15px rgba(255, 42, 75, 0.5); cursor: pointer; border: 2px solid white; animation: pulse-red 1.5s infinite; text-align: center; text-decoration: none; }
-        @keyframes pulse-red {
-            0% { transform: translateX(-50%) scale(1); box-shadow: 0 0 0 0 rgba(255, 42, 75, 0.7); }
-            70% { transform: translateX(-50%) scale(1.06); box-shadow: 0 0 0 15px rgba(255, 42, 75, 0); }
-            100% { transform: translateX(-50%) scale(1); box-shadow: 0 0 0 0 rgba(255, 42, 75, 0); }
+        /* Header Banner */
+        .hero-section {
+            background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1200') center/cover no-repeat;
+            color: #fff;
+            text-align: center;
+            padding: 80px 20px;
         }
 
-        .zalo-widget { position: fixed; bottom: 85px; right: 20px; z-index: 1001; display: flex; flex-direction: column; align-items: center; text-decoration: none; }
-        .zalo-icon-box { width: 55px; height: 55px; background: #0088fe; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 4px 15px rgba(0,136,254,0.4); position: relative; animation: zalo-shake 2s infinite; }
-        .zalo-icon-box img { width: 32px; height: 32px; }
-        .zalo-badge { position: absolute; top: -2px; right: -2px; background: #ff0000; color: white; border-radius: 50%; width: 20px; height: 20px; font-size: 11px; font-weight: bold; display: flex; justify-content: center; align-items: center; border: 2px solid white; }
-
-        @keyframes zalo-shake {
-            0%, 100% { transform: rotate(0deg); }
-            10%, 30%, 50% { transform: rotate(-8deg); }
-            20%, 40% { transform: rotate(8deg); }
-            60% { transform: rotate(0deg); }
+        .hero-section h1 {
+            font-size: 2.8rem;
+            color: #ffffff;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
         }
 
-        /* Modal Popup */
-        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 2000; display: none; justify-content: center; align-items: center; }
-        .modal-box { background: white; width: 90%; max-width: 420px; border-radius: 12px; padding: 25px; position: relative; box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
-        .close-modal { position: absolute; top: 10px; right: 15px; font-size: 1.8rem; color: #aaa; cursor: pointer; font-weight: bold; }
-        .modal-title { font-size: 1.5rem; font-weight: bold; color: #0d47a1; text-align: center; margin-bottom: 15px; }
-        .form-group { margin-bottom: 12px; }
-        .form-group input, .form-group textarea { width: 100%; padding: 10px 12px; border: 1px solid #ccc; border-radius: 5px; font-size: 0.95rem; outline: none; }
-        .form-group textarea { height: 80px; resize: none; }
-        .btn-submit-modal { background: #28a745; color: white; border: none; width: 100%; padding: 11px; font-weight: bold; font-size: 1rem; border-radius: 5px; cursor: pointer; margin-top: 5px; }
+        .hero-section p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 25px;
+            line-height: 1.6;
+            color: #e2e8f0;
+        }
 
-        /* Footer */
-        footer { background: #0a192f; color: white; padding: 30px 0 20px; margin-top: 40px; }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 25px; margin-bottom: 25px; }
-        .footer-col h4 { font-size: 1.1rem; margin-bottom: 12px; border-bottom: 2px solid var(--secondary); padding-bottom: 4px; display: inline-block; }
-        .footer-col p, .footer-col li { font-size: 0.88rem; color: #ccc; margin-bottom: 6px; list-style: none; }
-        .copyright { text-align: center; border-top: 1px solid #1e2d42; padding-top: 15px; font-size: 0.85rem; color: #888; }
+        /* Modal Overlay */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        /* Modal Box */
+        .modal-box {
+            background: #ffffff;
+            width: 90%;
+            max-width: 450px;
+            border-radius: 12px;
+            padding: 30px 25px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            position: relative;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 24px;
+            color: #94a3b8;
+            cursor: pointer;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+
+        .close-btn:hover {
+            color: #0f172a;
+        }
+
+        .modal-title {
+            text-align: center;
+            font-size: 1.6rem;
+            color: #1e3a8a;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .form-control:focus {
+            border-color: #2563eb;
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            height: 100px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 14px;
+            background-color: #16a34a;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: background-color 0.2s;
+            margin-top: 5px;
+        }
+
+        .btn-submit:hover {
+            background-color: #15803d;
+        }
+
+        .btn-open-modal {
+            padding: 12px 28px;
+            background-color: #2563eb;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-open-modal:hover {
+            background-color: #1d4ed8;
+        }
     </style>
 </head>
 <body>
 
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <div class="container">
-            <span><i class="fa-solid fa-location-dot"></i> Trung Tâm Gia Sư Bách Khoa 247 - Uy Tín Hàng Đầu</span>
-            <span><i class="fa-solid fa-envelope"></i> giasubachkhoa247@gmail.com</span>
-        </div>
-    </div>
-
-    <!-- Header -->
-    <header>
-        <div class="container header-container">
-            <a href="#" class="logo"><i class="fa-solid fa-graduation-cap"></i> GIA SƯ BÁCH KHOA 247</a>
-            <ul class="nav-menu">
-                <li><a href="#">Trang Chủ</a></li>
-                <li><a href="#hoc-sinh-tieu-bieu">Học Sinh Tiêu Biểu</a></li>
-                <li><a href="#danh-sach-lop">Lớp Mới Cần Gia Sư</a></li>
-            </ul>
-            <a href="tel:0393676655" class="btn-hotline"><i class="fa-solid fa-phone"></i> 0393.676.655</a>
-        </div>
+    <!-- Header Section -->
+    <header class="hero-section">
+        <h1>TRUNG TÂM GIA SƯ BÁCH KHOA 247</h1>
+        <p>Cung cấp gia sư Sinh viên & Giáo viên giỏi, uy tín. Dạy kèm tại nhà tất cả các môn từ lớp 1 - 12, luyện thi đại học, Tiếng Anh / C++.</p>
+        <button class="btn-open-modal" onclick="openModal()">ĐĂNG KÝ TƯ VẤN NGAY</button>
     </header>
 
-    <!-- Hero Banner -->
-    <section class="hero">
-        <div class="container">
-            <h1>TRUNG TÂM GIA SƯ BÁCH KHOA 247</h1>
-            <p>Chuyên cung cấp gia sư Sinh viên & Giáo viên Bách Khoa, Sư Phạm chất lượng cao. Dạy kèm tại nhà & Online tất cả các môn từ lớp 1 - 12, Luyện thi ĐH, Lập trình Python / C++.</p>
-            <div class="hero-btns">
-                <a href="javascript:void(0)" onclick="openModal()" class="btn-hero btn-green"><i class="fa-solid fa-pen-to-square"></i> Đăng Ký Tìm Gia Sư</a>
-                <a href="https://zalo.me/0393676655" target="_blank" class="btn-hero btn-white"><i class="fa-brands fa-zalo"></i> Chat Zalo: 0393.676.655</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Main Container Layout: Left Main Content + Right Sidebar -->
-    <div class="container main-layout">
-        
-        <!-- Cột Nội Dung Chính -->
-        <div class="main-content">
-
-            <!-- Section: Học Sinh Tiêu Biểu Việt Nam -->
-            <section class="students-section" id="hoc-sinh-tieu-bieu">
-                <div class="section-header">
-                    <h2>HỌC SINH TIỂU BIỂU</h2>
-                    <p style="color: #666; font-size: 0.9rem;">Tự hào về thành tích xuất sắc của các em học sinh tại Trung Tâm</p>
-                </div>
-
-                <div class="slider-container">
-                    <div class="slider-track">
-                        <!-- 10 Ảnh Người Việt Nam / Châu Á -->
-                        <div class="student-card">
-                            <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=300" alt="Học sinh Việt Nam"></div>
-                            <div class="student-name">Phạm Minh Hằng</div>
-                            <div class="student-achievement">Giải Nhất Viết Chữ Đẹp</div>
-                        </div>
-                        <div class="student-card">
-                            <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=300" alt="Học sinh Việt Nam"></div>
-                            <div class="student-name">Bùi Việt Hùng</div>
-                            <div class="student-achievement">Giải Nhì HSG Toán Cấp Quốc Gia</div>
-                        </div>
-                        <div class="student-card">
-                            <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=300" alt="Học sinh Việt Nam"></div>
-                            <div class="student-name">Trần Hà Linh</div>
-                            <div class="student-achievement">HSG Môn Tiếng Anh 3 Năm Liền</div>
-                        </div>
-                        <div class="student-card">
-                            <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=300" alt="Học sinh Việt Nam"></div>
-                            <div class="student-name">Nguyễn Hoàng Nam</div>
-                            <div class="student-achievement">Thủ Khoa ĐH Bách Khoa (29.5đ)</div>
-                        </div>
-                        <div class="student-card">
-                            <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300" alt="Học sinh Việt Nam"></div>
-                            <div class="student-name">Lê Thảo My</div>
-                            <div class="student-achievement">Giải Nhất HSG Lý Cấp Thành Phố</div>
-                        </div>
-                        <div class="student-card">
-                            <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300" alt="Học sinh Việt Nam"></div>
-                            <div class="student-name">Vũ Quốc Anh</div>
-                            <div class="student-achievement">Huy Chương Vàng Olympic Toán</div>
-                        </div>
-                        <div class="student-card">
-                            <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=300" alt="Học sinh Việt Nam"></div>
-                            <div class="student-name">Đặng Bảo Ngọc</div>
-                            <div class="student-achievement">IELTS 8.0 Ngay Từ Lớp 11</div>
-                        </div>
-
-                        <!-- Repeat Lặp lại để hiệu ứng cuộn vô tận mượt mà -->
-                        <div class="student-card">
-                            <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=300" alt="Học sinh Việt Nam"></div>
-                            <div class="student-name">Phạm Minh Hằng</div>
-                            <div class="student-achievement">Giải Nhất Viết Chữ Đẹp</div>
-                        </div>
-                        <div class="student-card">
-                            <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=300" alt="Học sinh Việt Nam"></div>
-                            <div class="student-name">Bùi Việt Hùng</div>
-                            <div class="student-achievement">Giải Nhì HSG Toán Cấp Quốc Gia</div>
-                        </div>
-                        <div class="student-card">
-                            <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=300" alt="Học sinh Việt Nam"></div>
-                            <div class="student-name">Trần Hà Linh</div>
-                            <div class="student-achievement">HSG Môn Tiếng Anh 3 Năm Liền</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Section: Danh Sách Lớp Cần Gia Sư -->
-            <div id="danh-sach-lop">
-                <div class="section-header">
-                    <h2>DANH SÁCH LỚP MỚI CẦN GIA SƯ</h2>
-                    <p style="color: #666; font-size: 0.9rem;">Cập nhật liên tục các lớp mới nhất hàng ngày</p>
-                </div>
-
-                <div class="grid-classes">
-                    <!-- Lớp 1 -->
-                    <div class="class-card">
-                        <div class="card-head">
-                            <span class="code">Mã Lớp: BK-201</span>
-                            <span class="badge">Chưa giao</span>
-                        </div>
-                        <div class="card-body">
-                            <div class="info-row"><span class="info-label">Môn học:</span><span>Toán & Vật Lý Lớp 12</span></div>
-                            <div class="info-row"><span class="info-label">Địa điểm:</span><span>Quận Cầu Giấy / Online</span></div>
-                            <div class="info-row"><span class="info-label">Học phí:</span><span class="price">2.500.000 đ / tháng</span></div>
-                            <div class="info-row"><span class="info-label">Lịch học:</span><span>3 buổi/tuần</span></div>
-                        </div>
-                        <div class="card-foot">
-                            <a href="https://zalo.me/0393676655" class="btn-apply" target="_blank"><i class="fa-brands fa-zalo"></i> Đăng Ký Nhận Lớp</a>
-                        </div>
-                    </div>
-
-                    <!-- Lớp 2 -->
-                    <div class="class-card">
-                        <div class="card-head">
-                            <span class="code">Mã Lớp: BK-202</span>
-                            <span class="badge">Chưa giao</span>
-                        </div>
-                        <div class="card-body">
-                            <div class="info-row"><span class="info-label">Môn học:</span><span>Lập Trình Python Cơ Bản</span></div>
-                            <div class="info-row"><span class="info-label">Địa điểm:</span><span>Học Online 1 kèm 1</span></div>
-                            <div class="info-row"><span class="info-label">Học phí:</span><span class="price">3.000.000 đ / tháng</span></div>
-                            <div class="info-row"><span class="info-label">Lịch học:</span><span>2 buổi/tuần</span></div>
-                        </div>
-                        <div class="card-foot">
-                            <a href="https://zalo.me/0393676655" class="btn-apply" target="_blank"><i class="fa-brands fa-zalo"></i> Đăng Ký Nhận Lớp</a>
-                        </div>
-                    </div>
-
-                    <!-- Lớp 3 -->
-                    <div class="class-card">
-                        <div class="card-head">
-                            <span class="code">Mã Lớp: BK-203</span>
-                            <span class="badge">Chưa giao</span>
-                        </div>
-                        <div class="card-body">
-                            <div class="info-row"><span class="info-label">Môn học:</span><span>Toán & Hóa Lớp 10</span></div>
-                            <div class="info-row"><span class="info-label">Địa điểm:</span><span>Quận Hai Bà Trưng</span></div>
-                            <div class="info-row"><span class="info-label">Học phí:</span><span class="price">2.200.000 đ / tháng</span></div>
-                            <div class="info-row"><span class="info-label">Lịch học:</span><span>2 buổi/tuần</span></div>
-                        </div>
-                        <div class="card-foot">
-                            <a href="https://zalo.me/0393676655" class="btn-apply" target="_blank"><i class="fa-brands fa-zalo"></i> Đăng Ký Nhận Lớp</a>
-                        </div>
-                    </div>
-
-                    <!-- Lớp 4 -->
-                    <div class="class-card">
-                        <div class="card-head">
-                            <span class="code">Mã Lớp: BK-204</span>
-                            <span class="badge">Chưa giao</span>
-                        </div>
-                        <div class="card-body">
-                            <div class="info-row"><span class="info-label">Môn học:</span><span>Tiếng Anh Luyện Thi Vào 10</span></div>
-                            <div class="info-row"><span class="info-label">Địa điểm:</span><span>Quận Đống Đa</span></div>
-                            <div class="info-row"><span class="info-label">Học phí:</span><span class="price">2.400.000 đ / tháng</span></div>
-                            <div class="info-row"><span class="info-label">Lịch học:</span><span>3 buổi/tuần</span></div>
-                        </div>
-                        <div class="card-foot">
-                            <a href="https://zalo.me/0393676655" class="btn-apply" target="_blank"><i class="fa-brands fa-zalo"></i> Đăng Ký Nhận Lớp</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- Cột Menu Bên Cạnh (Sidebar giống mẫu ảnh) -->
-        <div class="sidebar">
-
-            <!-- DÀNH CHO GIA SƯ -->
-            <div class="widget-box">
-                <div class="widget-title">DÀNH CHO GIA SƯ</div>
-                <ul class="widget-list">
-                    <li><a href="#" class="highlight">Nội quy nhận lớp</a></li>
-                    <li><a href="#">LỚP HIỆN CÓ</a></li>
-                    <li><a href="#">Tuyển dụng</a></li>
-                    <li><a href="#">Tài liệu – Chuyên đề</a></li>
-                </ul>
-            </div>
-
-            <!-- DÀNH CHO PHỤ HUYNH -->
-            <div class="widget-box">
-                <div class="widget-title">DÀNH CHO PHỤ HUYNH</div>
-                <ul class="widget-list">
-                    <li><a href="#">Giới thiệu trung tâm</a></li>
-                    <li><a href="#">Liên hệ trung tâm</a></li>
-                    <li><a href="#">Học phí tham khảo</a></li>
-                    <li><a href="#">Đăng ký học</a></li>
-                </ul>
-            </div>
-
-            <!-- GIA SƯ CÁC MÔN -->
-            <div class="widget-box">
-                <div class="widget-title">GIA SƯ CÁC MÔN</div>
-                <ul class="widget-list">
-                    <li><a href="#">Gia Sư Môn Toán</a></li>
-                    <li><a href="#">Gia Sư Môn Lý</a></li>
-                    <li><a href="#">Gia Sư Môn Hóa</a></li>
-                    <li><a href="#">Gia Sư Môn Sinh</a></li>
-                    <li><a href="#">Gia Sư Môn Văn</a></li>
-                    <li><a href="#">Gia Sư Môn Lịch Sử</a></li>
-                    <li><a href="#">Gia Sư Môn Địa Lý</a></li>
-                    <li><a href="#">Gia Sư Ngoại Ngữ</a></li>
-                    <li><a href="#">Gia Sư Tin Học</a></li>
-                    <li><a href="#">Gia Sư Luyện Thi</a></li>
-                    <li><a href="#">Gia Sư Năng Khiếu</a></li>
-                    <li><a href="#">Gia Sư Tổng Hợp</a></li>
-                </ul>
-            </div>
-
-            <!-- GIA SƯ CÁC LỚP -->
-            <div class="widget-box">
-                <div class="widget-title">GIA SƯ CÁC LỚP</div>
-                <ul class="widget-list">
-                    <li><a href="#">Gia Sư Lớp 1</a></li>
-                    <li><a href="#">Gia Sư Lớp 2</a></li>
-                    <li><a href="#">Gia Sư Lớp 3</a></li>
-                    <li><a href="#">Gia Sư Lớp 4</a></li>
-                    <li><a href="#">Gia Sư Lớp 5</a></li>
-                    <li><a href="#">Gia Sư Lớp 6</a></li>
-                    <li><a href="#">Gia Sư Lớp 7</a></li>
-                    <li><a href="#">Gia Sư Lớp 8</a></li>
-                    <li><a href="#">Gia Sư Lớp 9</a></li>
-                    <li><a href="#">Gia Sư Lớp 10</a></li>
-                    <li><a href="#">Gia Sư Lớp 11</a></li>
-                    <li><a href="#">Gia Sư Lớp 12</a></li>
-                </ul>
-            </div>
-
-            <!-- BÀI VIẾT MỚI -->
-            <div class="widget-box">
-                <div class="widget-title">BÀI VIẾT MỚI</div>
-                <ul class="widget-list">
-                    <li><a href="#">Gia sư kế toán tại nhà hướng dẫn lập báo cáo tài chính cho người mới học</a></li>
-                    <li><a href="#">Gia sư dạy kèm môn Địa lý lớp 11</a></li>
-                    <li><a href="#">Kinh nghiệm tìm gia sư Luyện thi Đại học khối A chất lượng</a></li>
-                </ul>
-            </div>
-
-        </div>
-
-    </div>
-
-    <!-- Floating Flashing Red Button -->
-    <div class="floating-consult-btn" onclick="openModal()">
-        <i class="fa-solid fa-bell"></i> Đăng Ký Tư Vấn Miễn Phí
-    </div>
-
-    <!-- Zalo Floating Widget Button -->
-    <a href="https://zalo.me/0393676655" target="_blank" class="zalo-widget" title="Chat Zalo ngay">
-        <div class="zalo-icon-box">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo">
-            <span class="zalo-badge">1</span>
-        </div>
-    </a>
-
-    <!-- Popup Modal -->
+    <!-- Modal Pop-up Form -->
     <div class="modal-overlay" id="consultModal">
         <div class="modal-box">
-            <span class="close-modal" onclick="closeModal()">&times;</span>
-            <div class="modal-title">ĐĂNG KÝ TƯ VẤN</div>
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 class="modal-title">ĐĂNG KÝ TƯ VẤN</h2>
+            
             <div class="form-group">
-                <input type="text" id="modal-name" placeholder="Họ tên (*)">
+                <input type="text" id="modal-name" class="form-control" placeholder="Họ tên (*)" required>
             </div>
+            
             <div class="form-group">
-                <input type="tel" id="modal-phone" placeholder="Điện thoại (*)">
+                <input type="tel" id="modal-phone" class="form-control" placeholder="Điện thoại (*)" required>
             </div>
+            
             <div class="form-group">
-                <textarea id="modal-msg" placeholder="Lời nhắn (Nhu cầu tìm gia sư...)"></textarea>
+                <textarea id="modal-msg" class="form-control" placeholder="Lời nhắn (Nhu cầu tìm gia sư...)"></textarea>
             </div>
-            <button class="btn-submit-modal" onclick="submitModalForm()">ĐĂNG KÝ NGAY</button>
+            
+            <button class="btn-submit" onclick="submitModalForm()">ĐĂNG KÝ NGAY</button>
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container footer-grid">
-            <div class="footer-col">
-                <h4>GIA SƯ BÁCH KHOA 247</h4>
-                <p>Chuyên cung cấp dịch vụ gia sư uy tín, chất lượng hàng đầu. Nơi kết nối tri thức vững chắc cho thế hệ trẻ.</p>
-            </div>
-            <div class="footer-col">
-                <h4>LIÊN HỆ TRỰC TIẾP</h4>
-                <ul>
-                    <li><i class="fa-solid fa-phone"></i> Hotline: <strong>0393.676.655</strong></li>
-                    <li><i class="fa-brands fa-whatsapp"></i> Zalo: <strong>0393.676.655</strong></li>
-                    <li><i class="fa-solid fa-envelope"></i> Email: giasubachkhoa247@gmail.com</li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>DỊCH VỤ NỔI BẬT</h4>
-                <ul>
-                    <li>• Gia sư Toán, Lý, Hóa, Sinh</li>
-                    <li>• Gia sư Luyện thi vào 10 & THPT QG</li>
-                    <li>• Gia sư Lập trình Python, C++, Tin học</li>
-                </ul>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>&copy; 2026 Trung Tâm Gia Sư Bách Khoa 247. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <!-- JavaScript -->
     <script>
-        const myPhone = "0393676655";
-
+        // Hàm mở Modal
         function openModal() {
             document.getElementById('consultModal').style.display = 'flex';
         }
 
+        // Hàm đóng Modal
         function closeModal() {
             document.getElementById('consultModal').style.display = 'none';
         }
 
-        window.onclick = function(event) {
-            let modal = document.getElementById('consultModal');
-            if (event.target == modal) {
-                closeModal();
-            }
-        }
-
+        // Hàm xử lý gửi form về Nicegram / Telegram
         function submitModalForm() {
             let name = document.getElementById('modal-name').value.trim();
             let phone = document.getElementById('modal-phone').value.trim();
             let msg = document.getElementById('modal-msg').value.trim();
 
             if (!name || !phone) {
-                alert('Vui lòng điền Họ tên và Số điện thoại!');
+                alert('Vui lòng điền đầy đủ Họ tên và Số điện thoại!');
                 return;
             }
 
-            let text = `Chào Trung Tâm, tôi đăng ký tư vấn:\n- Họ tên: ${name}\n- SĐT: ${phone}\n- Lời nhắn: ${msg}`;
-            window.open(`https://zalo.me/${myPhone}?text=${encodeURIComponent(text)}`, '_blank');
-            closeModal();
+            // Đã cấu hình Token và Chat ID của bạn
+            const telegramBotToken = '8813015366:AAFOQFJPOocEUWsZ3VmXONRekC7btL3wJ9Y';
+            const chatId = '1869431637';
+
+            // Nội dung tin nhắn báo về Nicegram
+            const textContent = 
+`🔔 **CÓ KHÁCH HÀNG ĐĂNG KÝ TƯ VẤN MỚI!**
+-----------------------------
+👤 **Họ tên:** ${name}
+📞 **Số điện thoại:** ${phone}
+💬 **Lời nhắn:** ${msg || 'Không có'}
+⏰ **Thời gian:** ${new Date().toLocaleString('vi-VN')}`;
+
+            // Gửi dữ liệu qua Telegram API
+            fetch(`https://api.telegram.org/bot${telegramBotToken}/sendMessage`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    chat_id: chatId,
+                    text: textContent,
+                    parse_mode: 'Markdown'
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.ok) {
+                    alert('Đăng ký thành công! Trung tâm sẽ liên hệ lại với bạn sớm nhất.');
+                    closeModal();
+                    // Reset thông tin trong form
+                    document.getElementById('modal-name').value = '';
+                    document.getElementById('modal-phone').value = '';
+                    document.getElementById('modal-msg').value = '';
+                } else {
+                    alert('Có lỗi xảy ra khi gửi đăng ký. Vui lòng thử lại!');
+                    console.error('Lỗi API:', data);
+                }
+            })
+            .catch(error => {
+                console.error('Lỗi kết nối:', error);
+                alert('Không thể kết nối đến máy chủ. Vui lòng thử lại sau!');
+            });
         }
     </script>
-
 </body>
 </html>
